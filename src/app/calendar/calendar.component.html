@@ -1,0 +1,22 @@
+<div class="container">
+  <mat-grid-list cols="4">
+    <mat-grid-tile *ngFor="let month of months">
+      <div class="block" [style.backgroundColor]="
+          month.users.length < 3? 'rgb(146, 143, 143)':
+          month.users.length < 7? 'rgb(118, 118, 221)':
+          month.users.length < 11? 'rgb(62, 146, 62)':
+        'rgb(233, 91, 91)'">
+        <span class="month">
+          <h3>{{month.name}}</h3>
+        </span>
+        <div class="users">
+          <ul *ngFor="let user of month.users">
+            <li>{{user.firstName}} {{user.lastName}}</li>
+          </ul>
+        </div>
+
+      </div>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>
